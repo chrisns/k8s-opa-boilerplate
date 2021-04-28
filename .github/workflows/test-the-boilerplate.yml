@@ -2,7 +2,7 @@ name: Test the boilerplate
 on: [push]
 
 jobs:
-  test:
+  test-boilerplate:
     runs-on: ubuntu-latest
     container: bitnami/kubectl:1.21
     steps:

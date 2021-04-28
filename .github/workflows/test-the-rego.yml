@@ -2,7 +2,7 @@ name: Test the rego
 on: [push]
 
 jobs:
-  test:
+  test-rego:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
