@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   test:
+    runs-on: ubuntu-latest
     container: bitnami/kubectl:1.21
     steps:
       - uses: actions/checkout@v2.3.4
