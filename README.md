@@ -1,5 +1,8 @@
 # Boiler plate example of managing OPA with kustomize
 
+[![Test the boilerplate](https://github.com/chrisns/k8s-opa-boilerplate/actions/workflows/test-the-boilerplate.yml/badge.svg)](https://github.com/chrisns/k8s-opa-boilerplate/actions/workflows/test-the-boilerplate.yml)
+[![Test the rego](https://github.com/chrisns/k8s-opa-boilerplate/actions/workflows/test-the-rego.yml/badge.svg)](https://github.com/chrisns/k8s-opa-boilerplate/actions/workflows/test-the-rego.yml)
+
 ## Motivation
 
 I wanted a boilerplate to help me write [OPA Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website) policy documents in [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/).
