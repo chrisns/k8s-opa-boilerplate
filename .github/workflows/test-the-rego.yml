@@ -1,0 +1,22 @@
+name: Test the rego
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Get OPA
+        run: |
+          wget --quiet -O /usr/bin/opa https://github.com/open-policy-agent/opa/releases/download/v0.28.0/opa_linux_amd64
+          chmod +x /usr/bin/opa
+      - name: Test
+        run: opa test *.rego -v --explain full
+      - name: Coverage
+        run: opa test --coverage --format=json *.rego > coverage.json
+      - uses: devmasx/coverage-check-action@v1.2.0
+        with:
+          type: simplecov
+          result_path: coverage.json
+          min_coverage: 100
+          token: ${{ github.token }}

@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  myrego: "package simpleRegistryCheck\n\nviolation {\n\timage := input.request.object.spec.containers[_].image\n\tnot
+    startswith(image, \"k8s.gcr.io/\")\n\tnot startswith(image, \"docker.io/\")\n}\n"
+kind: ConfigMap
+metadata:
+  name: myrego-dk457tft5k
+---
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8strustedimages
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sTrustedImages
+  targets:
+  - rego: "package simpleRegistryCheck\n\nviolation {\n\timage := input.request.object.spec.containers[_].image\n\tnot
+      startswith(image, \"k8s.gcr.io/\")\n\tnot startswith(image, \"docker.io/\")\n}\n"
+    target: admission.k8s.gatekeeper.sh

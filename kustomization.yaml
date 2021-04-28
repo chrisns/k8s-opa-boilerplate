@@ -1,0 +1,19 @@
+configMapGenerator:
+- name: myrego
+  files:
+    - myrego=simpleRegistryCheck.rego
+
+resources:
+  - constrainttemplate.yaml
+
+vars:
+  - name: REGO
+    objref:
+      kind: ConfigMap
+      name: myrego
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.myrego
+
+configurations:
+  - transformer_config.yaml

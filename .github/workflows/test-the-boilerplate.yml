@@ -1,0 +1,9 @@
+name: Test the boilerplate
+on: [push]
+
+jobs:
+  test:
+    container: bitnami/kubectl:1.21
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - run: ./testing/test.sh
