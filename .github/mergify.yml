@@ -1,0 +1,40 @@
+pull_request_rules:
+  - name: automatic merge dependabot
+    conditions:
+      - base=master
+      - author=dependabot[bot]
+    actions:
+      merge:
+        method: rebase
+        rebase_fallback: squash
+
+  - name: approve dependabot
+    conditions:
+      - author=dependabot[bot]
+    actions:
+      review:
+        message: auto approve dependabot
+
+  - name: automatic merge repomanager
+    conditions:
+      - base=master
+      - author=the-repository-manager[bot]
+    actions:
+      merge:
+        method: rebase
+        rebase_fallback: squash
+
+  - name: approve repomanager
+    conditions:
+      - author=the-repository-manager[bot]
+    actions:
+      review:
+        message: auto approve repomanager
+
+  - name: assign to owner
+    conditions:
+      - base=master
+    actions:
+      assign:
+        users:
+          - chrisns
