@@ -6,6 +6,7 @@
   "automerge": true,
   "platformAutomerge": true,
   "lockFileMaintenance": { "enabled": true },
+  "git-submodules": { "enabled": true },
   "pinDigests": true,
   "dependencyDashboard": false,
   "rollbackPrs": true,
