@@ -1,19 +1,5 @@
 {
   "extends": [
-    "config:base",
-    "workarounds:typesNodeVersioning"
-  ],
-  "automerge": true,
-  "platformAutomerge": true,
-  "lockFileMaintenance": { "enabled": true },
-  "git-submodules": { "enabled": true },
-  "pinDigests": true,
-  "dependencyDashboard": false,
-  "rollbackPrs": true,
-  "assignees": ["chrisns"],
-  "github-actions": {
-    "ignorePaths": [
-      "\\.github/workflows/security.yml"
-    ]
-  },
- }
+    "github>chrisns/repo-config:renovate"
+  ]
+}
