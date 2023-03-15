@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     container: bitnami/kubectl:1.26@sha256:b10b4ae540643a98ce40333391cac6328eb77de078508c39b9644db6645d3e33
     steps:
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
       - run: ./testing/test.sh
