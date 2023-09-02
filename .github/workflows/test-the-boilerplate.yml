@@ -4,7 +4,7 @@ on: [push]
 jobs:
   test-boilerplate:
     runs-on: ubuntu-latest
-    container: bitnami/kubectl:1.27@sha256:f8c9112ed8e93374559de09ddb2f4459a8677a3e478206e23efae674dff0dc1f
+    container: bitnami/kubectl:1.27@sha256:c150e2e63d10416d7364595f180105f1dbd98966b123d103321e3b5a99923675
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - run: ./testing/test.sh
