@@ -5,7 +5,7 @@ jobs:
   test-rego:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Get OPA
         run: |
           wget --quiet -O /tmp/opa https://github.com/open-policy-agent/opa/releases/download/v0.28.0/opa_linux_amd64
